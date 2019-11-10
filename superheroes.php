@@ -60,7 +60,7 @@ $superheroes = [
       "name" => "Wanda Maximoff",
       "alias" => "Scarlett Witch",
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
-  ], 
+  ],
 ];
 
 ?>
@@ -70,3 +70,15 @@ $superheroes = [
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+
+
+<?php foreach ($superheroes as $heroes):
+
+/*    echo $heroes['name'] ;
+    echo "\n";
+    echo $heroes['alias'];
+    echo "\n";
+    echo $heroes['biography'];
+    echo "\n";*/
+?>
+<?php endforeach; ?>

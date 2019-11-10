@@ -1,0 +1,31 @@
+/*h1 {    text-align: center;
+    color: white;
+    font-size: 20;
+}*/
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.header {
+    background-color: lightcoral;
+    background-repeat: cover;
+    padding: 20px;
+}
+
+body {
+    background-color: lightgray;
+    margin: 0;
+}
+
+.contain {
+    display: flex;
+    flex-direction: row;
+}
+
+hr {
+    color: grey;
+    border: 1px solid;
+}
