@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Superheroes</title>
-    <script src="app.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app1.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -20,13 +21,14 @@
         <p>Search by Full Name or Alias</p>
         <div class="contain">
             <div>
-                <form action="superheroes.php" method="POST">
-                    <input id="input" type="text" name="superheroes" placeholder="eg.Captain America or Steve Rogers" size="40">
+                <form action="superheroes.php" method="Post">
+                    <input id="input" type="text" name="hero" placeholder="eg.Captain America or Steve Rogers" size="40">
                 </form>
 
             </div>
+
             <div>
-                <button class="btn">Search</button>
+                <button id="searchbtn" class="btn">Search</button>
             </div>
         </div>
         <h2>RESULT</h2>

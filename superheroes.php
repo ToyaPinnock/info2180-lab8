@@ -72,13 +72,5 @@ $superheroes = [
 </ul>
 
 
-<?php foreach ($superheroes as $heroes):
 
-/*    echo $heroes['name'] ;
-    echo "\n";
-    echo $heroes['alias'];
-    echo "\n";
-    echo $heroes['biography'];
-    echo "\n";*/
-?>
-<?php endforeach; ?>
+<?php echo $_POST["hero"]; ?>
