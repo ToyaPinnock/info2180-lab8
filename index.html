@@ -8,7 +8,7 @@
     <title>Superheroes</title>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="app1.js"></script>
+    <script src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,15 +21,17 @@
         <p>Search by Full Name or Alias</p>
         <div class="contain">
             <div>
-                <form action="superheroes.php" method="Post">
+
+            </div>
+            <div>
+                <form action="superheroes.php" id="myform" method="Post">
                     <input id="input" type="text" name="hero" placeholder="eg.Captain America or Steve Rogers" size="40">
+                    <button id="searchbtn" type="text" class="btn">Search</button>
                 </form>
 
             </div>
 
-            <div>
-                <button id="searchbtn" class="btn">Search</button>
-            </div>
+
         </div>
         <h2>RESULT</h2>
         <hr>

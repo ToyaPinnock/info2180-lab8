@@ -64,13 +64,46 @@ $superheroes = [
 ];
 
 ?>
+<?php  $name=$_POST["hero"];
+if (empty($name)){
+    readfile('index.html');
+    echo dothis();
+} elseif(!empty($name)){
+    echo thenthis();
 
+}
+?>
+
+<?php function thenthis(){}?>
+<?php
+$name= $_POST["hero"];
+    foreach($superheroes as $heroes):
+    if ($heroes["name"] == filter_var ($name,FILTER_SANITIZE_STRING)){
+        readfile('index.html');
+        echo ($heroes["alias"]);
+        echo "<br>";
+        echo ("A.k.A ");
+        echo ($heroes["name"] );
+        echo "</h4>";
+        echo "<br>";
+        echo ($heroes["biography"]);
+    }elseif($heroes["alias"]== filter_var ($name,FILTER_SANITIZE_STRING)){
+        readfile('index.html');
+        echo ($heroes["name"]);
+        echo "<br>";
+        echo ("A.k.A");
+        echo (" ");
+        echo($heroes["alias"] );
+        echo "<br>";
+        echo ($heroes["biography"]);
+    }
+
+?>
+<?php endforeach?>
+
+<?php  function dothis(){}?>
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
-
-
-
-<?php echo $_POST["hero"]; ?>

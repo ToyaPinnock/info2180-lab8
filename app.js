@@ -21,9 +21,9 @@ window.onload = function() {
             }
 
             console.log(http.responseText);
+            //console.log(name);
         }
     }
-
 
 
 }

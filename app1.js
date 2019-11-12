@@ -1,9 +1,11 @@
 $(document).ready(function() {
-    var btn = $("#searchbtn");
-    btn.on("click", function(e) {
+    var btn = $("#myform");
+    btn.on("submit", function(e) {
+        console.log(name);
         var input = $("#input").val();
         $.ajax({
             url: "superheroes.php",
+            data: { name: name },
             success: function(result) {
                 if (input == "") {
                     document.getElementById("result").innerHTML = result;
