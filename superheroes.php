@@ -62,48 +62,49 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ],
 ];
-
 ?>
-<?php  $name=$_POST["hero"];
-if (empty($name)){
-    readfile('index.html');
-    echo dothis();
-} elseif(!empty($name)){
-    echo thenthis();
 
+
+<?php  $name=$_REQUEST['input'];
+if(!empty($name)){
+   foreach($superheroes as $heroes):
+   if ($heroes["name"]==$name){
+        echo "<h3>";
+        echo ($heroes["alias"]);
+        echo "</h3>";
+        echo ("A.k.A ");
+        echo"<h4>";
+        echo ($heroes["name"] );
+        echo "</h4>";
+        echo "<p>";
+        echo ($heroes["biography"]);
+        echo "</p>";
+   }elseif ($heroes['alias']== $name){
+        echo"<h4>";
+        echo ($heroes["name"]);
+        echo "</h4>";
+        echo ("A.k.A");
+        echo "<h3>";
+        echo($heroes["alias"] );
+        echo "</h3>";
+         echo "<p>";
+        echo ($heroes["biography"]);
+        echo "</p>";
+   }elseif ($heroes["name"]!=$name){
+       "Superhero not found";
+   }
+ endforeach;
+}elseif (empty($name)){
+    echo "<ul>";
+    foreach ($superheroes as $superhero):
+        echo"<li>";
+        echo $superhero['alias'];
+        echo "</li>";
+     endforeach;
+echo "</ul>";
 }
 ?>
 
-<?php function thenthis(){}?>
-<?php
-$name= $_POST["hero"];
-    foreach($superheroes as $heroes):
-    if ($heroes["name"] == filter_var ($name,FILTER_SANITIZE_STRING)){
-        readfile('index.html');
-        echo ($heroes["alias"]);
-        echo "<br>";
-        echo ("A.k.A ");
-        echo ($heroes["name"] );
-        echo "</h4>";
-        echo "<br>";
-        echo ($heroes["biography"]);
-    }elseif($heroes["alias"]== filter_var ($name,FILTER_SANITIZE_STRING)){
-        readfile('index.html');
-        echo ($heroes["name"]);
-        echo "<br>";
-        echo ("A.k.A");
-        echo (" ");
-        echo($heroes["alias"] );
-        echo "<br>";
-        echo ($heroes["biography"]);
-    }
 
-?>
-<?php endforeach?>
 
-<?php  function dothis(){}?>
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+
